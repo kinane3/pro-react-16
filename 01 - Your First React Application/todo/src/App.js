@@ -54,10 +54,17 @@ export default class App extends Component {
             });
     }
 
+    changeStateData = () => {
+        this.setState({
+            userName: this.state.userName ==="Adam" ? "Bob" : "Adam"
+        })
+    }
+
     render = () => 
         <div>
             <TodoBanner name={ this.state.userName } 
                 tasks={this.state.todoItems } />
+            <button className="btn btn-primary m-2" onClick={this.changeStateData}>Change</button>                
             <div className="container-fluid">
                 <TodoCreator callback={ this.createNewTodo } />
                 <table className="table table-striped table-bordered">
